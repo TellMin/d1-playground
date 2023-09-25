@@ -16,7 +16,7 @@ export const actions = {
 			return { success: false, error: 'Name is required' };
 		}
 		const d1Client = createD1Client(platform?.env?.DB);
-		await d1Client.insert(users).values({ name: name?.toString() }).execute();
+		await d1Client.insert(users).values({ name: name.toString() }).execute();
 		return { success: true };
 	}
 } satisfies Actions;
